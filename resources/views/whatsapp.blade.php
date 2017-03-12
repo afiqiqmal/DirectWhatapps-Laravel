@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Direct Whatsapp</title>
 
         @section('css')
             {{ Html::style('css/app.css') }}
@@ -13,11 +13,20 @@
             {{ Html::style('css/demo.css') }}
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+
+            <style type="text/css">
+                .sub-header{
+                    text-align: center !important;
+                }
+            </style>
         @show
     </head>
     <body>
         <div class="col-md-12 container">
             <h4>Easy way to send Whatapps directly from the browsers without save receipent phone number</h4>
+            <div class="sub-header">
+            <strong >Can be use with Desktop and Mobile</strong>
+            </div>
             <div class="card">
                 {{ Form::open(['route' => 'whatapps', 'method' => 'post'])}}
                     <div class="card-header card-header-icon" data-background-color="green">
@@ -25,7 +34,6 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Whatsapp Form</h3>
-                            
                             <div class="form-group">
                                 <select class="selectpicker" data-style="btn {{ $errors->has('countrycode') ? 'btn-rose' : 'btn-success' }} btn-square" name="countrycode" required="true"> 
                                     <option disabled selected>Country Code</option>
@@ -45,7 +53,7 @@
                             <label class="control-label">
                                 Message
                             </label>
-                            <textarea class="form-control" name="message" rows="5"></textarea>
+                            <textarea class="form-control" name="message" rows="5">{{old('message')}}</textarea>
                         </div>
                         <div class="category form-category">
                             <small>*</small> Required fields</div>
@@ -67,12 +75,12 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="https://github.com/afiqiqmal">
+                                <a href="https://github.com/afiqiqmal" target="_blank">
                                     Github
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/muhammad-hafiq-iqmal-bin-mohd-noh-5a2a65109/">
+                                <a href="https://www.linkedin.com/in/muhammad-hafiq-iqmal-bin-mohd-noh-5a2a65109/" target="_blank">
                                     LinkedIn
                                 </a>
                             </li>
@@ -84,7 +92,7 @@
                         <script></script><script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="https://github.com/afiqiqmal">Hafiq Iqmal</a>,    Whatsapp via Broswer
+                        <a href="https://github.com/afiqiqmal" target="_blank">Hafiq Iqmal</a>,    Whatsapp via Broswer
                     </p>
                 </div>
             </footer>

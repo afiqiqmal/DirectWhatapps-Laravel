@@ -27,7 +27,8 @@ class WhatsappController extends Controller
     	$agent = new Agent();
     	$request->replace(array(
 	    		'phonenumber' => $request->countrycode.$request->phonenumber,
-	    		'countrycode' => $request->countrycode
+	    		'countrycode' => $request->countrycode,
+	    		'message' => $request->message
     		));
 
     	$validator = Validator::make($request->all(),[
