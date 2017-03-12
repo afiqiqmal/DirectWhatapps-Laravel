@@ -2,6 +2,9 @@
 
 # DirectWhatsapp Laravel
 
+![alt tag](https://github.com/afiqiqmal/DirectWhatapps-Laravel/blob/master/screenshot.png?raw=true)
+
+
 ```npm install``` done!
 
 URL to send whatapps (if needed) -> https://directwhatsapp.herokuapp.com/{phonenumber}/{text}
