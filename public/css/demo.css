@@ -1,5 +1,6 @@
 .container {
-    float: none
+    float: none;
+    margin-top: 30px
 }
 
 html {
@@ -8,5 +9,5 @@ html {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100%
+    /*height: 100%;*/
 }

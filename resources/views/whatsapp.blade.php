@@ -25,8 +25,8 @@
         <div class="col-md-12 container">
             <h4>Easy way to send Whatapps directly from the browsers without save receipent phone number</h4>
             <div class="sub-header">
-            <strong >Can be use with Desktop and Mobile</strong><br>
-            <small><strong>https://directwhatsapp.herokuapp.com/{phonenumber}/{text}</strong></small>
+                <strong >Can be use with Desktop and Mobile</strong><br>
+                <small class="hidden-sm"><strong>https://directwhatsapp.herokuapp.com/{phonenumber}/{text}</strong></small>
             </div>
             <div class="card">
                 {{ Form::open(['route' => 'whatapps', 'method' => 'post'])}}
@@ -73,6 +73,7 @@
 
         <footer class="footer">
                 <div class="container-fluid">
+                    <div class="col-md-6 col-sm-12">
                     <nav class="pull-left">
                         <ul>
                             <li>
@@ -88,13 +89,16 @@
                             
                         </ul>
                     </nav>
-                    <p class="copyright pull-right">
-                        ©
-                        <script></script><script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="https://github.com/afiqiqmal" target="_blank">Hafiq Iqmal</a>,    Whatsapp via Broswer
-                    </p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p class="copyright pull-right">
+                            ©
+                            <script></script><script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="https://github.com/afiqiqmal" target="_blank">Hafiq Iqmal</a>,    Whatsapp via Broswer
+                        </p>
+                    </div>
                 </div>
             </footer>
 
@@ -105,6 +109,7 @@
             {{ Html::script('js/jquery.select-bootstrap.js') }}
             {{ Html::script('js/material-dashboard.js') }}
             {{ Html::script('js/bootstrap-notify.js') }}
+            {{ Html::script('js/jquery.tagsinput.js') }}
             {{ Html::script('js/demo.js') }}
         @show
 
