@@ -20,7 +20,7 @@ class WhatsappController extends Controller
 
     public function index()
     {
-    	return view('whatsapps')->with('countrycode',$this->json);
+    	return view('whatsapp')->with('countrycode',$this->json);
     }
 
     public function send_whatsapp(Request $request){
@@ -69,7 +69,7 @@ class WhatsappController extends Controller
     			'message' => 'invalid phone number format'
     		];
 
-    		return view('whatsapps',$data);
+    		return response()->json($data);
     	}
     }
 }
