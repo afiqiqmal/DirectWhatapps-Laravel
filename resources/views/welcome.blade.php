@@ -67,12 +67,12 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="https://github.com/afiqiqmal">
                                     Github
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/muhammad-hafiq-iqmal-bin-mohd-noh-5a2a65109/">
                                     LinkedIn
                                 </a>
                             </li>
@@ -84,7 +84,7 @@
                         <script></script><script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="#">Hafiq Iqmal</a>,    Whatsapp via Broswer
+                        <a href="https://github.com/afiqiqmal">Hafiq Iqmal</a>,    Whatsapp via Broswer
                     </p>
                 </div>
             </footer>
