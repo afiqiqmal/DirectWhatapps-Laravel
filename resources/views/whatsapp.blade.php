@@ -27,7 +27,7 @@
             <h4>Easy way to send Whatapps directly from the browsers without save receipent phone number</h4>
             <div class="sub-header">
                 <strong >Can be use with Desktop and Mobile</strong><br>
-                <small class="hidden-sm"><strong>https://directwhatsapp.herokuapp.com/{phonenumber}/{text}</strong></small>
+                <small class="hidden-sm"><strong>https://directwhatsapp.herokuapp.com/60123456789/Hello</strong></small>
             </div>
             <div class="card">
                 {{ Form::open(['route' => 'whatapps', 'method' => 'post'])}}
