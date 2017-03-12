@@ -62,7 +62,7 @@
                             <button type="submit" class="btn btn-success btn-fill">
                                 <i class="material-icons">done</i> Send
                             </button>
-                            <button type="submit" class="btn btn-rose btn-fill">
+                            <button type="reset" class="btn btn-rose btn-fill">
                                 <i class="material-icons">autorenew</i> Reset
                             </button>
                         </div>
