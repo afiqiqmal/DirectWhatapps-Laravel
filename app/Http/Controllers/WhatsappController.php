@@ -25,14 +25,9 @@ class WhatsappController extends Controller
 
     public function send_whatsapp(Request $request){
     	$agent = new Agent();
-    	$request->replace(array(
-	    		'phonenumber' => $request->countrycode.$request->phonenumber,
-	    		'countrycode' => $request->countrycode,
-	    		'message' => $request->message
-    		));
 
     	$validator = Validator::make($request->all(),[
-    			'phonenumber' => 'required|regex:/^\+[1-9]{1}[0-9]{3,14}$/',
+    			'phonenumber' => 'required|min:2|numeric',
     			'countrycode' => 'required'
     		]);
 
@@ -40,12 +35,22 @@ class WhatsappController extends Controller
     		return redirect()->back()->withErrors($validator->messages())->withInput($request->all());
     	}
     	else{
+    		$phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
+    		try{
+	    		$rawPhone = $phoneUtil->parse($request->phonenumber,explode(":", $request->countrycode)[1]);
+	    	}
+	    	catch(\Exception $e){
+	    		return redirect()->back()->withErrors(['phonenumber'=>'The phone number is not valid']);
+	    	}
+    		
+    		$rawPhone = $phoneUtil->format($rawPhone, \libphonenumber\PhoneNumberFormat::E164);
+
     		if ($agent->isDesktop()) {
-    			$url = "https://web.whatsapp.com/send?text=".$request->message."&phone=".$request->phonenumber;
+    			$url = "https://web.whatsapp.com/send?text=".$request->message."&phone=".$rawPhone;
     			return Redirect::to($url);
 	    	}
 	    	else{
-	    		$url = "whatsapp://send?text=".$request->message."&phone=".$request->phonenumber;
+	    		$url = "whatsapp://send?text=".$request->message."&phone=".$rawPhone;
 	    		return Redirect::to($url);
 	    	}
     	}
@@ -67,7 +72,7 @@ class WhatsappController extends Controller
     	else{
     		$data = [
     			'status' => false,
-    			'message' => 'invalid phone number format'
+    			'message' => 'invalid phone number format. Please add ex: +60 by country code'
     		];
 
     		return response()->json($data);

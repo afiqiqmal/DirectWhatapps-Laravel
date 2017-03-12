@@ -40,7 +40,7 @@
                                 <select class="selectpicker" data-style="btn {{ $errors->has('countrycode') ? 'btn-rose' : 'btn-success' }} btn-square" name="countrycode" required="true"> 
                                     <option disabled selected>Country Code</option>
                                     @foreach($countrycode as $code)
-                                        <option value="{{$code->dial_code}}">{{$code->name}} ({{$code->dial_code}})</option>
+                                        <option value="{{$code->dial_code}}:{{$code->code}}">{{$code->name}} ({{$code->dial_code}})</option>
                                     @endforeach
                                 </select>
                             </div>
