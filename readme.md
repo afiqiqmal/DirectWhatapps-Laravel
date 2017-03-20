@@ -7,7 +7,12 @@
 
 ## Installation
 
-```npm install``` done!
+1. Clone
+2. npm install and composer update
+3. done
+
+
+if you want to deploy to heroku.. enable \URL::forceScheme('https'); in AppServiceProvider
 
 
 ## Usage
