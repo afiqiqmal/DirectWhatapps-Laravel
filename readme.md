@@ -26,3 +26,7 @@ ex: +60142222222 or 60142222222
 
 
 refer to this site https://countrycode.org/
+
+
+## Licence
+open source project that is licensed under the [MIT license](http://opensource.org/licenses/MIT). Please refer to the license file for more information.
